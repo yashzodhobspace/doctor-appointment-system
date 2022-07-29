@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -18,5 +19,5 @@ class patient(models.Model):
 class Appointment(models.Model):
     # doc = models.ForeignKey(doctor,on_delete=models.CASCADE)
     slot = models.ForeignKey(slot,on_delete=models.CASCADE)
-    pat = models.ForeignKey(patient,on_delete=models.CASCADE)
-    status = models.CharField(max_length=1)
+    pat = models.ForeignKey(User,on_delete=models.CASCADE)
+    # status = models.CharField(max_length=1)
